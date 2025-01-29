@@ -1,0 +1,16 @@
+-- Tabela Grupo
+CREATE TABLE IF NOT EXISTS Grupo (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
+-- Tabela Jogador
+CREATE TABLE IF NOT EXISTS Jogador (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    telefone VARCHAR(255),
+    codinome VARCHAR(255) UNIQUE,
+    grupo_id BIGINT,
+    CONSTRAINT FK_Jogador_Grupo FOREIGN KEY (grupo_id) REFERENCES Grupo(id) ON DELETE SET NULL
+);

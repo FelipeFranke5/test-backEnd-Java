@@ -1,0 +1,11 @@
+.alert {
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    opacity: 1;
+    max-height: 100px;
+}
+
+.alert.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
